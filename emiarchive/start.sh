@@ -2,18 +2,20 @@
 
 set -m # for job control
 
-admin_user="${EMIARCHIVE_ADMIN_USER:-admin}"
-admin_password="${EMIARCHIVE_ADMIN_PASSWORD:-password}"
 port="${EMIARCHIVE_PORT:-30000}"
 admin_port="${EMIARCHIVE_ADMIN_PORT:-30001}"
-bucket="recordings"
+admin_public_url="${EMIARCHIVE_ADMIN_PUBLIC_URL:-http://localhost:30001}"
+admin_user="${EMIARCHIVE_ADMIN_USER:-admin}"
+admin_password="${EMIARCHIVE_ADMIN_PASSWORD:-password}"
 readonly_user="${EMIARCHIVE_READONLY_USER:-readonly}"
 readonly_password="${EMIARCHIVE_READONLY_PASSWORD:-password}"
 readwrite_user="${EMIARCHIVE_READWRITE_USER:-readwrite}"
 readwrite_password="${EMIARCHIVE_READWRITE_PASSWORD:-password}"
+bucket="recordings"
 
 export "MINIO_ROOT_USER=$admin_user"
 export "MINIO_ROOT_PASSWORD=$admin_password"
+export "MINIO_BROWSER_REDIRECT_URL=$admin_public_url"
 
 minio server ./data \
   --address ":$port" \
