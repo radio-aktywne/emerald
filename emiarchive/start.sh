@@ -11,7 +11,8 @@ readonly_user="${EMIARCHIVE_READONLY_USER:-readonly}"
 readonly_password="${EMIARCHIVE_READONLY_PASSWORD:-password}"
 readwrite_user="${EMIARCHIVE_READWRITE_USER:-readwrite}"
 readwrite_password="${EMIARCHIVE_READWRITE_PASSWORD:-password}"
-bucket="recordings"
+live_recordings_bucket="${EMIARCHIVE_LIVE_RECORDINGS_BUCKET:-live-recordings}"
+prerecorded_bucket="${EMIARCHIVE_PRERECORDED_BUCKET:-pre-recorded}"
 
 export "MINIO_ROOT_USER=$admin_user"
 export "MINIO_ROOT_PASSWORD=$admin_password"
@@ -30,8 +31,9 @@ done
 
 echo 'Connected to minio!'
 
-echo 'Setting up bucket...'
-mc mb -p minio/recordings
+echo 'Setting up buckets...'
+mc mb -p "minio/$live_recordings_bucket"
+mc mb -p "minio/$prerecorded_bucket"
 
 echo 'Setting up readonly user...'
 mc admin user add minio "$readonly_user" "$readonly_password"
@@ -44,7 +46,7 @@ mc admin policy add minio custom-readwrite ./conf/policies/readwrite.json
 mc admin policy set minio custom-readwrite "user=$readwrite_user"
 
 echo 'Minio setup finished!'
-echo "Bucket: $bucket"
+echo "Buckets: $live_recordings_bucket, $prerecorded_bucket"
 echo "Readonly user: $readonly_user"
 echo "Readwrite user: $readwrite_user"
 
