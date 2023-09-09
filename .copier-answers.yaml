@@ -1,0 +1,14 @@
+---
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 0.1.3
+_src_path: gh:radio-aktywne/template-app-generic
+accountname: radio-aktywne
+appname: emiarchive
+description: Emission archive 🗃️
+docs: true
+docsurl: https://radio-aktywne.github.io/app-emiarchive
+envprefix: EMIARCHIVE
+registry: true
+releases: true
+reponame: app-emiarchive
+repourl: https://github.com/radio-aktywne/app-emiarchive
