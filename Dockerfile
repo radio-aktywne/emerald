@@ -1,33 +1,61 @@
-ARG MINIO_CLIENT_IMAGE_TAG=RELEASE.2022-03-17T20-25-06Z
-ARG MINIO_IMAGE_TAG=RELEASE.2022-03-24T00-43-44Z
+# Use generic base image with Nix installed
+FROM nixos/nix:2.16.1 AS env
 
-FROM minio/mc:$MINIO_CLIENT_IMAGE_TAG AS mc
+# Configure Nix
+RUN echo "extra-experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 
-FROM minio/minio:$MINIO_IMAGE_TAG
+# Set working directory to something other than root
+WORKDIR /env/
 
-COPY --from=mc /usr/bin/mc /usr/bin/mc
+# Copy Nix files
+COPY *.nix flake.lock ./
 
-WORKDIR /app
+# Copy env script
+COPY ./scripts/env.sh ./scripts/env.sh
 
-COPY ./emiarchive/start.sh ./start.sh
-RUN chmod +x ./start.sh
+# Build runtime shell closure and activation script
+RUN \
+    # Mount cached store paths
+    --mount=type=cache,target=/nix-store-cache \
+    # Mount Nix evaluation cache
+    --mount=type=cache,target=/root/.cache/nix \
+    ./scripts/env.sh runtime ./build /nix-store-cache
 
-COPY ./emiarchive/conf/ ./conf/
+# Ubuntu is probably the safest choice for a runtime container right now
+FROM ubuntu:23.04
 
+# Use bash as default shell
+SHELL ["/bin/bash", "-c"]
+
+# Copy runtime shell closure and activation script
+COPY --from=env /env/build/closure/ /nix/store/
+COPY --from=env /env/build/activate /env/activate
+
+# Set working directory to something other than root
+WORKDIR /app/
+
+# Create app user
+RUN useradd --create-home app
+
+# Setup entrypoint for RUN commands
+COPY ./scripts/shell.sh ./scripts/shell.sh
+SHELL ["./scripts/shell.sh"]
+
+# Copy source
+COPY ./src/ ./src/
+
+# Setup environmental variables
 ENV EMIARCHIVE_PORT=30000 \
     EMIARCHIVE_ADMIN_PORT=30001 \
-    EMIARCHIVE_ADMIN_PUBLIC_URL=http://localhost:30001 \
-    EMIARCHIVE_ADMIN_USER=admin \
-    EMIARCHIVE_ADMIN_PASSWORD=password \
-    EMIARCHIVE_READONLY_USER=readonly \
-    EMIARCHIVE_READONLY_PASSWORD=password \
-    EMIARCHIVE_READWRITE_USER=readwrite \
-    EMIARCHIVE_READWRITE_PASSWORD=password \
-    EMIARCHIVE_LIVE_RECORDINGS_BUCKET=live-recordings \
-    EMIARCHIVE_PRERECORDED_BUCKET=pre-recorded
+    EMIARCHIVE_ADMIN_PUBLIC_URL=http://localhost:30001
 
+# Running on port 8000
 EXPOSE 30000
+
+# Admin API on port 8001
 EXPOSE 30001
 
-ENTRYPOINT ["./start.sh"]
+# Setup main entrypoint
+COPY ./scripts/entrypoint.sh ./scripts/entrypoint.sh
+ENTRYPOINT ["./scripts/entrypoint.sh", "/app/src/start.sh"]
 CMD []
