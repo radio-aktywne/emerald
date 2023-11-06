@@ -38,6 +38,7 @@
         node = pkgs.nodejs;
         nil = pkgs.nil;
         task = pkgs.go-task;
+        coreutils = pkgs.coreutils;
         trunk = pkgs.trunk-io;
         copier = pkgs.copier;
         minio = pkgs.minio;
@@ -71,6 +72,7 @@
               node
               nil
               task
+              coreutils
               trunk
               copier
               minio
@@ -95,6 +97,7 @@
 
             packages = [
               task
+              coreutils
               copier
             ];
           };
@@ -105,6 +108,7 @@
             packages = [
               node
               task
+              coreutils
               trunk
             ];
           };
@@ -115,6 +119,7 @@
             packages = [
               node
               task
+              coreutils
             ];
           };
         };
