@@ -1,9 +1,11 @@
----
 services:
   emiarchive:
-    build: .
+    build:
+      context: ./
+      network: host
     network_mode: host
     environment:
+      - "EMIARCHIVE_HOST=${EMIARCHIVE_HOST:-0.0.0.0}"
       - "EMIARCHIVE_PORT=${EMIARCHIVE_PORT:-30000}"
       - "EMIARCHIVE_ADMIN_PORT=${EMIARCHIVE_ADMIN_PORT:-30001}"
       - "EMIARCHIVE_ADMIN_PUBLIC_URL=${EMIARCHIVE_ADMIN_PUBLIC_URL:-http://localhost:30001}"

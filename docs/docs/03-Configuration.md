@@ -7,6 +7,9 @@ title: Configuration
 
 You can configure the app at runtime using various environment variables:
 
+- `EMIARCHIVE_HOST` -
+  host on which the app will be listening
+  (default: `0.0.0.0`)
 - `EMIARCHIVE_PORT` -
   port on which the app will be listening
   (default: `30000`)
