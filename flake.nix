@@ -79,6 +79,10 @@
               minio-client
               s5cmd
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
 
           runtime = pkgs.mkShell {
@@ -90,6 +94,10 @@
               tini
               su-exec
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
 
           template = pkgs.mkShell {
@@ -100,6 +108,10 @@
               coreutils
               copier
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
 
           lint = pkgs.mkShell {
@@ -111,6 +123,10 @@
               coreutils
               trunk
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
 
           docs = pkgs.mkShell {
@@ -121,6 +137,10 @@
               task
               coreutils
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
         };
       };
