@@ -3,7 +3,7 @@ slug: /
 title: Index
 ---
 
-# emiarchive app
+# emiarchive database
 
 Emission archive 🗃️
 

@@ -1,14 +1,16 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 0.5.1
-_src_path: gh:radio-aktywne/template-app-generic
+_commit: 0.1.0
+_src_path: gh:radio-aktywne/template-database-minio
 accountname: radio-aktywne
-appname: emiarchive
+databasename: emiarchive
 description: Emission archive 🗃️
 docs: true
-docsurl: https://radio-aktywne.github.io/app-emiarchive
+docsurl: https://radio-aktywne.github.io/database-emiarchive
 envprefix: EMIARCHIVE
-imagename: apps/emiarchive
+imagename: databases/emiarchive
+port: 30000
 registry: true
 releases: true
-reponame: app-emiarchive
-repourl: https://github.com/radio-aktywne/app-emiarchive
+reponame: database-emiarchive
+repourl: https://github.com/radio-aktywne/database-emiarchive
+webport: 30001

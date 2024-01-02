@@ -121,22 +121,8 @@ tasks:
         docs
         --
         {{ .CLI_ARGS | default "start --host 0.0.0.0" }}
-  clean:
-    desc: Clean data
-    cmds:
-      - >
-        rm
-        --recursive
-        --force
-        data/
-    status:
-      - >
-        test
-        '!'
-        -d
-        data/
   run:
-    desc: Run the app
+    desc: Run the database
     interactive: true
     cmds:
       - >
