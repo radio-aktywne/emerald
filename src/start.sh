@@ -4,8 +4,8 @@
 
 host="${EMIARCHIVE_HOST:-0.0.0.0}"
 port="${EMIARCHIVE_PORT:-30000}"
-admin_port="${EMIARCHIVE_ADMIN_PORT:-30001}"
-admin_public_url="${EMIARCHIVE_ADMIN_PUBLIC_URL:-http://localhost:30001}"
+web_port="${EMIARCHIVE_WEB_PORT:-30001}"
+web_public_url="${EMIARCHIVE_WEB_PUBLIC_URL:-http://localhost:30001}"
 admin_user="${EMIARCHIVE_ADMIN_USER:-admin}"
 admin_password="${EMIARCHIVE_ADMIN_PASSWORD:-password}"
 readonly_user="${EMIARCHIVE_READONLY_USER:-readonly}"
@@ -19,11 +19,11 @@ prerecorded_bucket="${EMIARCHIVE_PRERECORDED_BUCKET:-prerecorded}"
 
 MINIO_ROOT_USER="${admin_user}" \
 	MINIO_ROOT_PASSWORD="${admin_password}" \
-	MINIO_BROWSER_REDIRECT_URL="${admin_public_url}" \
+	MINIO_BROWSER_REDIRECT_URL="${web_public_url}" \
 	minio server \
 	data/ \
 	--address "${host}:${port}" \
-	--console-address "${host}:${admin_port}" \
+	--console-address "${host}:${web_port}" \
 	--quiet \
 	--anonymous \
 	&
@@ -50,13 +50,13 @@ echo "Setting up buckets..."
 echo
 
 if mc ls minio | grep --quiet "${live_bucket}"; then
-	echo "Bucket ${live_bucket} already exists, skipping..."
+	echo "Bucket '${live_bucket}' already exists, skipping..."
 else
 	mc mb --ignore-existing "minio/${live_bucket}"
 fi
 
 if mc ls minio | grep --quiet "${prerecorded_bucket}"; then
-	echo "Bucket ${prerecorded_bucket} already exists, skipping..."
+	echo "Bucket '${prerecorded_bucket}' already exists, skipping..."
 else
 	mc mb --ignore-existing "minio/${prerecorded_bucket}"
 fi
@@ -107,8 +107,8 @@ echo "MinIO is ready!"
 echo
 echo "Host: ${host}"
 echo "Port: ${port}"
-echo "Admin port: ${admin_port}"
-echo "Admin public URL: ${admin_public_url}"
+echo "Web port: ${web_port}"
+echo "Web public URL: ${web_public_url}"
 echo
 echo "Admin user: ${admin_user}"
 echo "Read-only user: ${readonly_user}"
