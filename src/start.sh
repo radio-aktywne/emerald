@@ -2,18 +2,18 @@
 
 # Configuration
 
-host="${EMIARCHIVE_HOST:-0.0.0.0}"
-port="${EMIARCHIVE_PORT:-30000}"
-web_port="${EMIARCHIVE_WEB_PORT:-30001}"
-web_public_url="${EMIARCHIVE_WEB_PUBLIC_URL:-http://localhost:30001}"
-admin_user="${EMIARCHIVE_ADMIN_USER:-admin}"
-admin_password="${EMIARCHIVE_ADMIN_PASSWORD:-password}"
-readonly_user="${EMIARCHIVE_READONLY_USER:-readonly}"
-readonly_password="${EMIARCHIVE_READONLY_PASSWORD:-password}"
-readwrite_user="${EMIARCHIVE_READWRITE_USER:-readwrite}"
-readwrite_password="${EMIARCHIVE_READWRITE_PASSWORD:-password}"
-live_bucket="${EMIARCHIVE_LIVE_RECORDINGS_BUCKET:-live}"
-prerecorded_bucket="${EMIARCHIVE_PRERECORDED_BUCKET:-prerecorded}"
+host="${EMIARCHIVE__SERVER__HOST:-0.0.0.0}"
+port="${EMIARCHIVE__SERVER__PORTS__S3:-30000}"
+web_port="${EMIARCHIVE__SERVER__PORTS__WEB:-30001}"
+web_public_url="${EMIARCHIVE__URLS__WEB:-http://localhost:30001}"
+admin_user="${EMIARCHIVE__CREDENTIALS__ADMIN__USER:-admin}"
+admin_password="${EMIARCHIVE__CREDENTIALS__ADMIN__PASSWORD:-password}"
+readonly_user="${EMIARCHIVE__CREDENTIALS__READONLY__USER:-readonly}"
+readonly_password="${EMIARCHIVE__CREDENTIALS__READONLY__PASSWORD:-password}"
+readwrite_user="${EMIARCHIVE__CREDENTIALS__READWRITE__USER:-readwrite}"
+readwrite_password="${EMIARCHIVE__CREDENTIALS__READWRITE__PASSWORD:-password}"
+live_bucket="${EMIARCHIVE__BUCKETS__LIVE:-live}"
+prerecorded_bucket="${EMIARCHIVE__BUCKETS__PRERECORDED:-prerecorded}"
 
 # Start MinIO
 
