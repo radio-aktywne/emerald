@@ -3,11 +3,11 @@ slug: /
 title: Index
 ---
 
-# emiarchive database
+# datarecords database
 
-Emission archive 🗃️
+Emission recordings database 🗃️
 
 ## 💡 About
 
-`emiarchive` is a [`MinIO`](https://min.io) based storage
+`datarecords` is a [`MinIO`](https://min.io) based storage
 for recordings of radio emissions.

@@ -2,18 +2,18 @@
 
 # Configuration
 
-host="${EMIARCHIVE__SERVER__HOST:-0.0.0.0}"
-port="${EMIARCHIVE__SERVER__PORTS__S3:-30000}"
-web_port="${EMIARCHIVE__SERVER__PORTS__WEB:-30001}"
-web_public_url="${EMIARCHIVE__URLS__WEB:-http://localhost:30001}"
-admin_user="${EMIARCHIVE__CREDENTIALS__ADMIN__USER:-admin}"
-admin_password="${EMIARCHIVE__CREDENTIALS__ADMIN__PASSWORD:-password}"
-readonly_user="${EMIARCHIVE__CREDENTIALS__READONLY__USER:-readonly}"
-readonly_password="${EMIARCHIVE__CREDENTIALS__READONLY__PASSWORD:-password}"
-readwrite_user="${EMIARCHIVE__CREDENTIALS__READWRITE__USER:-readwrite}"
-readwrite_password="${EMIARCHIVE__CREDENTIALS__READWRITE__PASSWORD:-password}"
-live_bucket="${EMIARCHIVE__BUCKETS__LIVE:-live}"
-prerecorded_bucket="${EMIARCHIVE__BUCKETS__PRERECORDED:-prerecorded}"
+host="${DATARECORDS__SERVER__HOST:-0.0.0.0}"
+port="${DATARECORDS__SERVER__PORTS__S3:-30000}"
+web_port="${DATARECORDS__SERVER__PORTS__WEB:-30001}"
+web_public_url="${DATARECORDS__URLS__WEB:-http://localhost:30001}"
+admin_user="${DATARECORDS__CREDENTIALS__ADMIN__USER:-admin}"
+admin_password="${DATARECORDS__CREDENTIALS__ADMIN__PASSWORD:-password}"
+readonly_user="${DATARECORDS__CREDENTIALS__READONLY__USER:-readonly}"
+readonly_password="${DATARECORDS__CREDENTIALS__READONLY__PASSWORD:-password}"
+readwrite_user="${DATARECORDS__CREDENTIALS__READWRITE__USER:-readwrite}"
+readwrite_password="${DATARECORDS__CREDENTIALS__READWRITE__PASSWORD:-password}"
+live_bucket="${DATARECORDS__BUCKETS__LIVE:-live}"
+prerecorded_bucket="${DATARECORDS__BUCKETS__PRERECORDED:-prerecorded}"
 
 # Start MinIO
 
