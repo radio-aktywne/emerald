@@ -2,15 +2,15 @@
 _commit: 0.4.0
 _src_path: gh:radio-aktywne/template-database-minio
 accountname: radio-aktywne
-databasename: emiarchive
-description: Emission archive 🗃️
+databasename: datarecords
+description: Emission recordings database 🗃️
 docs: true
-docsurl: https://radio-aktywne.github.io/database-emiarchive
-envprefix: EMIARCHIVE
-imagename: databases/emiarchive
+docsurl: https://radio-aktywne.github.io/database-datarecords
+envprefix: DATARECORDS
+imagename: databases/datarecords
 port: 30000
 registry: true
 releases: true
-reponame: database-emiarchive
-repourl: https://github.com/radio-aktywne/database-emiarchive
+reponame: database-datarecords
+repourl: https://github.com/radio-aktywne/database-datarecords
 webport: 30001
