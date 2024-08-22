@@ -2,10 +2,10 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes } from "prism-react-renderer";
 
-const url = new URL("https://radio-aktywne.github.io/database-datarecords");
+const url = new URL("https://radio-aktywne.github.io/database-mediarecords");
 
 const config: Config = {
-  title: "datarecords database docs",
+  title: "mediarecords database docs",
   favicon: "favicon.svg?v=1",
 
   url: `${url.protocol}//${url.host}`,
@@ -41,14 +41,14 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: "datarecords database docs",
+      title: "mediarecords database docs",
       logo: {
-        alt: "datarecords database docs logo",
+        alt: "mediarecords database docs logo",
         src: "logo.svg?v=1",
       },
       items: [
         {
-          href: "https://github.com/radio-aktywne/database-datarecords",
+          href: "https://github.com/radio-aktywne/database-mediarecords",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",

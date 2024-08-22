@@ -3,11 +3,11 @@ slug: /
 title: Index
 ---
 
-# datarecords database
+# mediarecords database
 
-Emission recordings database 🗃️
+Emission recordings media 📼
 
 ## 💡 About
 
-`datarecords` is a [`MinIO`](https://min.io) based storage
-for recordings of radio emissions.
+`mediarecords` is a [`MinIO`](https://min.io) based storage
+for recordings of live broadcasts.

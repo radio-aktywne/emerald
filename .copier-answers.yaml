@@ -2,15 +2,15 @@
 _commit: 0.4.0
 _src_path: gh:radio-aktywne/template-database-minio
 accountname: radio-aktywne
-databasename: datarecords
-description: Emission recordings database 🗃️
+databasename: mediarecords
+description: Emission recordings media 📼
 docs: true
-docsurl: https://radio-aktywne.github.io/database-datarecords
-envprefix: DATARECORDS
-imagename: databases/datarecords
+docsurl: https://radio-aktywne.github.io/database-mediarecords
+envprefix: MEDIARECORDS
+imagename: databases/mediarecords
 port: 30000
 registry: true
 releases: true
-reponame: database-datarecords
-repourl: https://github.com/radio-aktywne/database-datarecords
+reponame: database-mediarecords
+repourl: https://github.com/radio-aktywne/database-mediarecords
 webport: 30001
