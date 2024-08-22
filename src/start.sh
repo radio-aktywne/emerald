@@ -2,18 +2,17 @@
 
 # Configuration
 
-host="${DATARECORDS__SERVER__HOST:-0.0.0.0}"
-port="${DATARECORDS__SERVER__PORTS__S3:-30000}"
-web_port="${DATARECORDS__SERVER__PORTS__WEB:-30001}"
-web_public_url="${DATARECORDS__URLS__WEB:-http://localhost:30001}"
-admin_user="${DATARECORDS__CREDENTIALS__ADMIN__USER:-admin}"
-admin_password="${DATARECORDS__CREDENTIALS__ADMIN__PASSWORD:-password}"
-readonly_user="${DATARECORDS__CREDENTIALS__READONLY__USER:-readonly}"
-readonly_password="${DATARECORDS__CREDENTIALS__READONLY__PASSWORD:-password}"
-readwrite_user="${DATARECORDS__CREDENTIALS__READWRITE__USER:-readwrite}"
-readwrite_password="${DATARECORDS__CREDENTIALS__READWRITE__PASSWORD:-password}"
-live_bucket="${DATARECORDS__BUCKETS__LIVE:-live}"
-prerecorded_bucket="${DATARECORDS__BUCKETS__PRERECORDED:-prerecorded}"
+host="${MEDIARECORDS__SERVER__HOST:-0.0.0.0}"
+port="${MEDIARECORDS__SERVER__PORTS__S3:-30000}"
+web_port="${MEDIARECORDS__SERVER__PORTS__WEB:-30001}"
+web_public_url="${MEDIARECORDS__URLS__WEB:-http://localhost:30001}"
+admin_user="${MEDIARECORDS__CREDENTIALS__ADMIN__USER:-admin}"
+admin_password="${MEDIARECORDS__CREDENTIALS__ADMIN__PASSWORD:-password}"
+readonly_user="${MEDIARECORDS__CREDENTIALS__READONLY__USER:-readonly}"
+readonly_password="${MEDIARECORDS__CREDENTIALS__READONLY__PASSWORD:-password}"
+readwrite_user="${MEDIARECORDS__CREDENTIALS__READWRITE__USER:-readwrite}"
+readwrite_password="${MEDIARECORDS__CREDENTIALS__READWRITE__PASSWORD:-password}"
+bucket=default
 
 # Start MinIO
 
@@ -49,16 +48,10 @@ echo
 echo "Setting up buckets..."
 echo
 
-if mc ls minio | grep --quiet "${live_bucket}"; then
-	echo "Bucket '${live_bucket}' already exists, skipping..."
+if mc ls minio | grep --quiet "${bucket}"; then
+	echo "Bucket '${bucket}' already exists, skipping..."
 else
-	mc mb --ignore-existing "minio/${live_bucket}"
-fi
-
-if mc ls minio | grep --quiet "${prerecorded_bucket}"; then
-	echo "Bucket '${prerecorded_bucket}' already exists, skipping..."
-else
-	mc mb --ignore-existing "minio/${prerecorded_bucket}"
+	mc mb --ignore-existing "minio/${bucket}"
 fi
 
 # Setup policies
@@ -114,8 +107,7 @@ echo "Admin user: ${admin_user}"
 echo "Read-only user: ${readonly_user}"
 echo "Read-write user: ${readwrite_user}"
 echo
-echo "Live recordings bucket: ${live_bucket}"
-echo "Prerecorded bucket: ${prerecorded_bucket}"
+echo "Bucket: ${bucket}"
 
 # Wait for MinIO to exit
 
