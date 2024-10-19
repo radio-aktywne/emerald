@@ -3,9 +3,9 @@ slug: /
 title: Index
 ---
 
-# mediarecords database
+# mediarecords
 
-Emission recordings media 📼
+Broadcast recordings media 📼
 
 ## 💡 About
 
