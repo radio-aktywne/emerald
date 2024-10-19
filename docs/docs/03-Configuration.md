@@ -12,13 +12,13 @@ You can configure the database at runtime using various environment variables:
   (default: `0.0.0.0`)
 - `EMERALD__SERVER__PORTS__S3` -
   port on which the database will be listening
-  (default: `30000`)
+  (default: `10710`)
 - `EMERALD__SERVER__PORTS__WEB` -
   port on which the web interface will be available
-  (default: `30001`)
+  (default: `10711`)
 - `EMERALD__URLS__WEB` -
   public URL of the web interface
-  (default: `http://localhost:30001`)
+  (default: `http://localhost:10711`)
 - `EMERALD__CREDENTIALS__ADMIN__USER` -
   username for the admin user
   (default: `admin`)

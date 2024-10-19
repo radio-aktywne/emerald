@@ -21,7 +21,7 @@ just because it's the fastest one we've found.
 For example, to list all files in the `default` bucket, you can run:
 
 ```sh
-S3_ENDPOINT_URL='http://localhost:30000' \
+S3_ENDPOINT_URL='http://localhost:10710' \
     AWS_ACCESS_KEY_ID='readonly' \
     AWS_SECRET_ACCESS_KEY='password' \
     s5cmd ls s3://default/
@@ -29,5 +29,5 @@ S3_ENDPOINT_URL='http://localhost:30000' \
 
 ## Web UI
 
-You can access the web UI at [http://localhost:30001](http://localhost:30001).
+You can access the web UI at [http://localhost:10711](http://localhost:10711).
 You can log in with any of the existing users and perform basic operations there.
