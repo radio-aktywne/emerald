@@ -1,16 +1,16 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 0.4.0
+_commit: 0.5.0
 _src_path: gh:radio-aktywne/template-database-minio
 accountname: radio-aktywne
 databasename: mediarecords
-description: Emission recordings media 📼
+description: Broadcast recordings media 📼
 docs: true
-docsurl: https://radio-aktywne.github.io/database-mediarecords
+docsurl: https://radio-aktywne.github.io/mediarecords
 envprefix: MEDIARECORDS
 imagename: databases/mediarecords
 port: 30000
 registry: true
 releases: true
-reponame: database-mediarecords
-repourl: https://github.com/radio-aktywne/database-mediarecords
+reponame: mediarecords
+repourl: https://github.com/radio-aktywne/mediarecords
 webport: 30001
