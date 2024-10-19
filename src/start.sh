@@ -3,9 +3,9 @@
 # Configuration
 
 host="${EMERALD__SERVER__HOST:-0.0.0.0}"
-port="${EMERALD__SERVER__PORTS__S3:-30000}"
-web_port="${EMERALD__SERVER__PORTS__WEB:-30001}"
-web_public_url="${EMERALD__URLS__WEB:-http://localhost:30001}"
+port="${EMERALD__SERVER__PORTS__S3:-10710}"
+web_port="${EMERALD__SERVER__PORTS__WEB:-10711}"
+web_public_url="${EMERALD__URLS__WEB:-http://localhost:10711}"
 admin_user="${EMERALD__CREDENTIALS__ADMIN__USER:-admin}"
 admin_password="${EMERALD__CREDENTIALS__ADMIN__PASSWORD:-password}"
 readonly_user="${EMERALD__CREDENTIALS__READONLY__USER:-readonly}"

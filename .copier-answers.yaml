@@ -8,9 +8,9 @@ docs: true
 docsurl: https://radio-aktywne.github.io/emerald
 envprefix: EMERALD
 imagename: databases/emerald
-port: 30000
+port: 10710
 registry: true
 releases: true
 reponame: emerald
 repourl: https://github.com/radio-aktywne/emerald
-webport: 30001
+webport: 10711
