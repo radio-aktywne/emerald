@@ -2,10 +2,10 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes } from "prism-react-renderer";
 
-const url = new URL("https://radio-aktywne.github.io/mediarecords");
+const url = new URL("https://radio-aktywne.github.io/emerald");
 
 const config: Config = {
-  title: "mediarecords docs",
+  title: "emerald docs",
   favicon: "favicon.svg?v=1",
 
   url: `${url.protocol}//${url.host}`,
@@ -41,14 +41,14 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: "mediarecords docs",
+      title: "emerald docs",
       logo: {
-        alt: "mediarecords docs logo",
+        alt: "emerald docs logo",
         src: "logo.svg?v=1",
       },
       items: [
         {
-          href: "https://github.com/radio-aktywne/mediarecords",
+          href: "https://github.com/radio-aktywne/emerald",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
