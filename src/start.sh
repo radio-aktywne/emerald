@@ -2,16 +2,16 @@
 
 # Configuration
 
-host="${MEDIARECORDS__SERVER__HOST:-0.0.0.0}"
-port="${MEDIARECORDS__SERVER__PORTS__S3:-30000}"
-web_port="${MEDIARECORDS__SERVER__PORTS__WEB:-30001}"
-web_public_url="${MEDIARECORDS__URLS__WEB:-http://localhost:30001}"
-admin_user="${MEDIARECORDS__CREDENTIALS__ADMIN__USER:-admin}"
-admin_password="${MEDIARECORDS__CREDENTIALS__ADMIN__PASSWORD:-password}"
-readonly_user="${MEDIARECORDS__CREDENTIALS__READONLY__USER:-readonly}"
-readonly_password="${MEDIARECORDS__CREDENTIALS__READONLY__PASSWORD:-password}"
-readwrite_user="${MEDIARECORDS__CREDENTIALS__READWRITE__USER:-readwrite}"
-readwrite_password="${MEDIARECORDS__CREDENTIALS__READWRITE__PASSWORD:-password}"
+host="${EMERALD__SERVER__HOST:-0.0.0.0}"
+port="${EMERALD__SERVER__PORTS__S3:-30000}"
+web_port="${EMERALD__SERVER__PORTS__WEB:-30001}"
+web_public_url="${EMERALD__URLS__WEB:-http://localhost:30001}"
+admin_user="${EMERALD__CREDENTIALS__ADMIN__USER:-admin}"
+admin_password="${EMERALD__CREDENTIALS__ADMIN__PASSWORD:-password}"
+readonly_user="${EMERALD__CREDENTIALS__READONLY__USER:-readonly}"
+readonly_password="${EMERALD__CREDENTIALS__READONLY__PASSWORD:-password}"
+readwrite_user="${EMERALD__CREDENTIALS__READWRITE__USER:-readwrite}"
+readwrite_password="${EMERALD__CREDENTIALS__READWRITE__PASSWORD:-password}"
 bucket=default
 
 # Start MinIO

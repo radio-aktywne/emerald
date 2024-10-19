@@ -2,15 +2,15 @@
 _commit: 0.5.0
 _src_path: gh:radio-aktywne/template-database-minio
 accountname: radio-aktywne
-databasename: mediarecords
+databasename: emerald
 description: Broadcast recordings media 📼
 docs: true
-docsurl: https://radio-aktywne.github.io/mediarecords
-envprefix: MEDIARECORDS
-imagename: databases/mediarecords
+docsurl: https://radio-aktywne.github.io/emerald
+envprefix: EMERALD
+imagename: databases/emerald
 port: 30000
 registry: true
 releases: true
-reponame: mediarecords
-repourl: https://github.com/radio-aktywne/mediarecords
+reponame: emerald
+repourl: https://github.com/radio-aktywne/emerald
 webport: 30001
