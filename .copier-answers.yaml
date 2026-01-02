@@ -1,9 +1,9 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 0.7.0
+_commit: 0.8.0
 _src_path: gh:radio-aktywne/template-database-minio
 accountname: radio-aktywne
 databasename: emerald
-description: Broadcast recordings media 📼
+description: Broadcast recordings media database 📼
 docs: true
 docsurl: https://radio-aktywne.github.io/emerald
 envprefix: EMERALD

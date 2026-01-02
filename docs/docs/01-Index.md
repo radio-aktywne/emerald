@@ -5,9 +5,8 @@ title: Index
 
 # emerald
 
-Broadcast recordings media 📼
+Broadcast recordings media database 📼
 
 ## 💡 About
 
-`emerald` is a [`MinIO`](https://min.io) based storage
-for recordings of live broadcasts.
+`emerald` is a [`MinIO`](https://min.io) database for recordings of live broadcasts.

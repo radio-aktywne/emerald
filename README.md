@@ -2,7 +2,7 @@
 
 <div align="center">
 
-Broadcast recordings media 📼
+Broadcast recordings media database 📼
 
 [![Lint](https://github.com/radio-aktywne/emerald/actions/workflows/lint.yaml/badge.svg)](https://github.com/radio-aktywne/emerald/actions/workflows/lint.yaml)
 [![Image](https://github.com/radio-aktywne/emerald/actions/workflows/image.yaml/badge.svg)](https://github.com/radio-aktywne/emerald/actions/workflows/image.yaml)
@@ -15,8 +15,7 @@ Broadcast recordings media 📼
 
 ## 💡 About
 
-`emerald` is a [`MinIO`](https://min.io) based storage
-for recordings of live broadcasts.
+`emerald` is a [`MinIO`](https://min.io) database for recordings of live broadcasts.
 
 ## 📄 Further Reading
 
